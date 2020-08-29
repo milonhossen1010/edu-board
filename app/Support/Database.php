@@ -1,7 +1,8 @@
 <?php 
+	namespace Edu\board\Support;
     include_once "../../config.php";
 
-    namespace Edu\board\Support;
+
     use PDO;
 
     /**
