@@ -1,10 +1,18 @@
 <?php
 namespace Edu\board\Support;
+
+
+
+//Connect config file
 require_once "../config.php";
+
+//Connect auto load file
 require_once "../vendor/autoload.php";
 
+//Auth class
 use Edu\board\Support\Auth;
 
+//Use auth class
 $auth = new Auth;
 
 
@@ -34,12 +42,11 @@ $auth = new Auth;
         $email_uname = $_POST['email_uname'];
         $pass = $_POST['pass'];
 
-        if (empty($email_uname)|| empty($pass)) {
-           $mess = '<p class="alert alert-danger">All flied are required!<button class="close" data-dismiss="alert">&times;</button></p>';
+        if (empty($email_uname) || empty($pass)) {
+            $mess = '<p class="alert alert-danger">All flied are required!<button class="close" data-dismiss="alert">&times;</button></p>';
         } else {
-            $auth -> userLoginSystem($email_uname, $pass);
+            $mess =  $auth->userLoginSystem($email_uname, $pass);
         }
-        
     }
 
 
@@ -54,9 +61,9 @@ $auth = new Auth;
             <section class="m-b-lg">
                 <header class="wrapper text-center"> <strong>Sign in to get in touch</strong> </header>
                 <?php
-                    if (isset($mess)) {
-                        echo $mess;
-                    }
+                if (isset($mess)) {
+                    echo $mess;
+                }
                 ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>  " method="POST">
                     <div class="list-group">
