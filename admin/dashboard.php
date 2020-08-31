@@ -15,7 +15,7 @@
 
                     <section class="row m-b-md">
                         <div class="col-sm-6">
-                            <h3 class="m-b-xs text-black">Dashboard</h3> <small>Welcome back, <?php echo $_SESSION['name']; ?> <i class="fa fa-map-marker fa-lg text-primary"></i> New York City</small>
+                            <h3 class="m-b-xs text-black">Dashboard</h3> <small>Welcome back, <?php echo $_SESSION['name']; ?>  <i class="fa fa-envelope fa-lg text-primary"></i> <?php echo $_SESSION['email'];?></small>
                         </div>
                         <div class="col-sm-6 text-right text-left-xs m-t-md">
                             <div class="btn-group"> <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Widgets <span class="caret"></span></a>

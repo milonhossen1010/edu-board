@@ -49,4 +49,15 @@ class Auth extends Database
      {
           return $this->dataCheck("users", $email_uname);
      }
+
+
+
+     /**
+      * Logout system
+      */
+      public function logoutSystem()
+      {
+          session_destroy();
+          header("location:../admin/index.php");
+      }
 }

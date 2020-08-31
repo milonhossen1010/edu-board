@@ -3,6 +3,28 @@
 require_once "../config.php";
 //Connect auto load file
 require_once "../vendor/autoload.php";
+
+//Auth class
+use Edu\board\Support\Auth;
+//Use auth class
+$auth = new Auth;
+
+
+
+/**
+ * Logout system
+ */
+
+if (isset($_GET['logout']) && $_GET['logout']== 'success' ) {
+    
+
+    $auth-> logoutSystem();
+} 
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,12 +62,11 @@ require_once "../vendor/autoload.php";
                         <li> <span class="arrow top"></span> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
                         <li class="divider"></li>
-                        <li> <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a> </li>
+                        <li><a href="?logout=success">Logout</a></li>
                     </ul>
                 </li>
             </ul>
         </header>
-
         <section>
     <section class="hbox stretch">
 
