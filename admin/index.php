@@ -15,6 +15,13 @@ use Edu\board\Support\Auth;
 //Use auth class
 $auth = new Auth;
 
+/**
+ * Page secure 
+ */
+
+if (isset($_SESSION['id'] ) AND isset($_SESSION['uname'])) {
+    header('location:dashboard.php');
+ } 
 
 
 ?>

@@ -15,8 +15,8 @@ class Auth extends Database
           $login_user_data = $data['data']->fetch(PDO::FETCH_ASSOC);
 
           if ($num == 1) {
-               if (password_verify($pass, $login_user_data['pass'] )) {
-                   
+               if (password_verify($pass, $login_user_data['pass'])) {
+
                     /**
                      * Session data
                      */
@@ -27,27 +27,28 @@ class Auth extends Database
                     $_SESSION['email'] = $login_user_data['email'];
                     $_SESSION['cell'] = $login_user_data['cell'];
                     $_SESSION['photo'] = $login_user_data['photo'];
+                    $_SESSION['pass'] = $login_user_data['pass'];
 
                     /**
                      * Redirect to dashboard
                      */
                     header("location:dashboard.php");
-                               
                } else {
                     return '<p class="alert alert-danger"> Wrong password! <button class="close" data-dismiss="alert">&times;</button></p>';
                }
-               
           } else {
-              return '<p class="alert alert-danger">Username or email is incorrect !<button class="close" data-dismiss="alert">&times;</button></p>';
+               return '<p class="alert alert-danger">Username or email is incorrect !<button class="close" data-dismiss="alert">&times;</button></p>';
           }
-          
      }
 
 
      //Email user check
      public function emailUserCheck($email_uname)
      {
-          return $this->dataCheck("users", $email_uname);
+          return $this->dataCheck("users", [
+               'email' => $email_uname,
+               'uname' => $email_uname,
+          ], 'OR');
      }
 
 
@@ -55,9 +56,15 @@ class Auth extends Database
      /**
       * Logout system
       */
-      public function logoutSystem()
-      {
+     public function logoutSystem()
+     {
           session_destroy();
           header("location:../admin/index.php");
-      }
+     }
+
+
+
+     /**
+      * Page secure 
+      */
 }
