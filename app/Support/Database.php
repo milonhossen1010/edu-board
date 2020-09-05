@@ -70,6 +70,23 @@ abstract class Database
         ];
     }
 
+    /**
+     * Delete 
+     */
+    public function delete($id)
+    {
+        # code...
+    }
+    
+
+    /**
+     * Find data by Id
+     */
+    public function FunctionName(Type $var = null)
+    {
+        # code...
+    }
+
 
     /**
      * Update 

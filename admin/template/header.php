@@ -9,6 +9,9 @@ use Edu\board\Support\Auth;
 //Use auth class
 $auth = new Auth;
 
+if(isset($_COOKIE['relog'])) {
+   
+  } 
 
 
 /**

@@ -27,13 +27,13 @@
                                        <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Dashboard</span> </a>
                                   </li>
                                   <li class="">
-                                       <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Students</span> </a>
+                                       <a href="students.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Students</span> </a>
                                   </li>
                                   <li class="">
-                                       <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Results</span> </a>
+                                       <a href="results.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Results</span> </a>
                                   </li>
                                   <li class="">
-                                       <a href="dashboard.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Users</span> </a>
+                                       <a href="users.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">Users</span> </a>
                                   </li>
 
 

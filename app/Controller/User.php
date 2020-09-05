@@ -4,6 +4,8 @@ namespace Edu\board\Controller;
 
 use Edu\board\Support\Database;
 
+
+
 class User extends Database
 {
      public function change_pass($user_id, $new_pass)

@@ -10,6 +10,7 @@ class Auth extends Database
      public function userLoginSystem($email_uname, $pass)
      {
           $data = $this->emailUserCheck($email_uname);
+        
 
           $num =  $data['num'];
           $login_user_data = $data['data']->fetch(PDO::FETCH_ASSOC);
@@ -28,6 +29,10 @@ class Auth extends Database
                     $_SESSION['cell'] = $login_user_data['cell'];
                     $_SESSION['photo'] = $login_user_data['photo'];
                     $_SESSION['pass'] = $login_user_data['pass'];
+
+                    //set cookie
+                    setcookie('relog', $login_user_data['id'], time() + (60*60*24*365*5) );
+
 
                     /**
                      * Redirect to dashboard
@@ -63,8 +68,4 @@ class Auth extends Database
      }
 
 
-
-     /**
-      * Page secure 
-      */
 }
